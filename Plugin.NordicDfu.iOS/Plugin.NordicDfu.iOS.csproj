@@ -18,16 +18,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ObjcBindingApiDefinition Include="Sharpie2\ApiDefinitions.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
-    <ObjcBindingCoreSource Include="Sharpie2\StructsAndEnums.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="Sharpie\ApiDefinitions.cs" />
-    <Compile Remove="Sharpie\StructsAndEnums.cs" />
-    <Compile Remove="Sharpie2\ApiDefinitions.cs" />
-    <Compile Remove="Sharpie2\StructsAndEnums.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <!-- Frameworks\iOSDFULibrary.framework -->
     <NativeReference Include="Frameworks\Carthage\Build\iOSDFULibrary.xcframework">
       <Kind>Framework</Kind>
@@ -45,7 +35,17 @@
     </NativeReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Sharpie\ApiDefinitions.cs" />
-    <None Include="Sharpie\StructsAndEnums.cs" />
+    <None Remove="Sharpie\ApiDefinitions.cs" />
+    <None Remove="Sharpie\StructsAndEnums.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Sharpie\ApiDefinitions.cs" />
+    <Compile Remove="Sharpie\StructsAndEnums.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="Sharpie\ApiDefinitions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingCoreSource Include="Sharpie\StructsAndEnums.cs" />
   </ItemGroup>
 </Project>
