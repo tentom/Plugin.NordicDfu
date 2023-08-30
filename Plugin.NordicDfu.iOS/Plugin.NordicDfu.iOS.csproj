@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0-ios</TargetFramework>
+
+    <MtouchExtraArgs>-v -v -v -v</MtouchExtraArgs>
+
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>true</ImplicitUsings>
+    <IsBindingProject>true</IsBindingProject>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <!--<NoBindingEmbedding>false</NoBindingEmbedding>-->
+    <Version>4.13.0.3</Version>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+
+  <PropertyGroup>
+      <PackageOutputPath Condition="'$(PackageOutputPath)' == ''">$([System.IO.Path]::Combine($(MSBuildThisFileDirectory), `./Output/`))</PackageOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="Sharpie2\ApiDefinitions.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <ObjcBindingCoreSource Include="Sharpie2\StructsAndEnums.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Sharpie\ApiDefinitions.cs" />
+    <Compile Remove="Sharpie\StructsAndEnums.cs" />
+    <Compile Remove="Sharpie2\ApiDefinitions.cs" />
+    <Compile Remove="Sharpie2\StructsAndEnums.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Frameworks\iOSDFULibrary.framework -->
+    <NativeReference Include="Frameworks\Carthage\Build\iOSDFULibrary.xcframework">
+      <Kind>Framework</Kind>
+      <SmartLink>False</SmartLink>
+      <Frameworks>Foundation</Frameworks>
+      <ForceLoad>True</ForceLoad>
+    </NativeReference>
+
+    <!-- Frameworks\ZIPFoundation.framework -->
+    <NativeReference Include="Frameworks\Carthage\Build\ZIPFoundation.xcframework">
+      <Kind>Framework</Kind>
+      <SmartLink>False</SmartLink>
+      <Frameworks>Foundation</Frameworks>
+      <ForceLoad>True</ForceLoad>
+    </NativeReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sharpie\ApiDefinitions.cs" />
+    <None Include="Sharpie\StructsAndEnums.cs" />
+  </ItemGroup>
+</Project>
