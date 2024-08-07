@@ -9,7 +9,7 @@
     <IsBindingProject>true</IsBindingProject>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <!--<NoBindingEmbedding>false</NoBindingEmbedding>-->
-    <Version>4.13.0.3</Version>
+    <Version>4.13.0.5</Version>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
 
