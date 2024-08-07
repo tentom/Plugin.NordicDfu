@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-android</TargetFramework>
+    <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <PropertyGroup>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+        <IsBindingLibrary>true</IsBindingLibrary>
+        <IncludeSource>true</IncludeSource>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <Deterministic>true</Deterministic>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>true</ImplicitUsings>
+  </PropertyGroup>
+  
+  <Import Project="BuildTasks\Versioning.targets"/> 
+  <Import Project="BuildTasks\NugetPackaging.targets"/>
+
+  <ItemGroup>
+    <AndroidLibrary Update="Jars\dfu-2.5.0.aar" Bind="true" />
+    <AndroidLibrary Remove="Jars\gson-2.10.1.jar" />
+    <ReferenceJar Include="Jars\gson-2.10.1.jar" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.AndroidX.Core" Version="1.10.1.1" PrivateAssets="All" />
+  </ItemGroup>
+</Project>

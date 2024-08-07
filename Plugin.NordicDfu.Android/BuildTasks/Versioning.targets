@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+    <!-- ==================== VERSIONING ===================-->
+    <PropertyGroup>
+        <Dfu_Version Condition="'$(Dfu_Version)' == ''">2.5.0.1</Dfu_Version>
+        <!-- Apply Version parts according to packaging standards -->
+        <AssemblyVersion>$(Dfu_Version)</AssemblyVersion>
+        <AssemblyFileVersion>$(Dfu_Version)</AssemblyFileVersion>
+        <AssemblyInformationalVersion>$(Dfu_Version)</AssemblyInformationalVersion>
+        <Version>$(Dfu_Version)</Version>
+        <PackageVersion>$(Dfu_Version)</PackageVersion>
+    </PropertyGroup>
+</Project>

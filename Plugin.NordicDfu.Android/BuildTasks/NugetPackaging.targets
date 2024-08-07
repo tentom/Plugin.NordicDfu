@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+    <PropertyGroup>
+        <Plugin_Package_Name>Plugin.Maui.NordicDfu.Android</Plugin_Package_Name>
+        <Plugin_Package_Tags>Ble;MAUI;Dfu;Bluetooth;Nordic;Semiconductor</Plugin_Package_Tags>
+        <Plugin_Package_Copyright>Morten Liland</Plugin_Package_Copyright>
+        <Plugin_Package_Description>.Net MAUI wrapper around Android-DFU-Library from Nordic Semiconductor.</Plugin_Package_Description>
+    </PropertyGroup>
+    <!-- ==================== PACKAGING ==================== -->
+    <PropertyGroup>
+        <PackageOutputPath Condition="'$(PackageOutputPath)' == '' ">$([System.IO.Path]::Combine($(MSBuildThisFileDirectory), `../Output/`))</PackageOutputPath> <!-- default -->
+    </PropertyGroup>
+    <PropertyGroup>
+        <RootNamespace>$(Plugin_Package_Name)</RootNamespace>
+        <PackageId>$(Plugin_Package_Name)</PackageId>
+        <AssemblyName>$(Plugin_Package_Name)</AssemblyName>
+
+        <Authors>$(Plugin_Package_Copyright)</Authors>
+        <Owners>$(Plugin_Package_Copyright)</Owners>
+        <Copyright>$(Plugin_Package_Copyright)</Copyright>
+
+        <Summary>$(Plugin_Package_Description)</Summary>
+        <Description>$(Plugin_Package_Description)</Description>
+        <PackageDescription>$(Plugin_Package_Description)</PackageDescription>
+
+        <PackageTags>$(Plugin_Package_Tags)</PackageTags>
+        <!-- 
+        <PackageIconPath>$([System.IO.Path]::Combine($(MSBuildProjectDirectory), `../icon.png`))</PackageIconPath>
+        <PackageLicencePath>$([System.IO.Path]::Combine($(MSBuildProjectDirectory), `../LICENSE`))</PackageLicencePath>
+        <PackageReadMePath>$([System.IO.Path]::Combine($(MSBuildProjectDirectory), `../README.md`))</PackageReadMePath>
+        <PackageIcon Condition="Exists('$(PackageIconPath)')">icon.png</PackageIcon>
+        <PackageLicenseFile Condition="Exists('$(PackageLicencePath)')">LICENSE</PackageLicenseFile>
+        <PackageReadmeFile Condition="Exists('$(PackageReadMePath)')">README.md</PackageReadmeFile>
+        -->
+    </PropertyGroup>
+    
+</Project>
